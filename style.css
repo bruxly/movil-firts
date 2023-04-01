@@ -1,0 +1,944 @@
+/*
+1.Posicionamiento
+2.Modelo de caja (Box model)
+3.Tipografia
+4.Visuales
+5.otros
+*/
+
+:root {
+    /*Colores*/
+    --bitcoin-orange:#F7931A;
+    --Soft-Orange:#FFE9D5;
+    --Scondary-Blue:#1A9AF7;
+    --Soft-Blue: #E7F5FF;
+    --Warm-Black: #201E1C;
+    --black: #282623;
+    --grey : #BABABA;
+    --off-white: #FAF8F7;
+    --just-white: #FFFFFF;
+
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: ‘DM Sans’, sans-serif;
+    
+}
+
+header {
+    position: relative;
+    display: flex;/*centra el header en la pagina*/
+    flex-direction: column;/*todo el header se centra y se coloca en colomnas*/
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;/*no se va hacer mas pequeña que 320px*/
+    height: 334px;/*la distancia que tiene el logo al borde superior de la pantalla*/
+    text-align: center;/*las etiquetas h1,p y botton quedan debajo del logo*/
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%); /*color a todo al header*/
+}
+
+header img {
+width: 15rem;
+max-width: 400px;
+margin-top: 20px;/*el header baja del borde superior*/
+align-self: center;/*es la forma de centar a un contenedor que esta utilizando flex*/
+}
+
+.header--title-container {
+    width: 90%;
+    min-width: 288px;/*no se hace mas pequeño*/
+    max-width: 900px;/*no se hace mas grande*/
+    height: 218px;/*la medida del contenedor*/
+    margin-top: 40px;/*la distancia entre el logo y h1*/
+    text-align: center;
+    align-self: center;/*el contenedor header--tlite-container*/
+  
+}
+
+
+.header--title-container h1 {
+    font-size: 2.4rem;
+    font-weight: bold;/*grosor de la fuente*/
+    
+    line-height: 2.6rem;/*separa el texto de h1 uno de otro en la parte superior*/
+    color: var(--just-white); 
+}
+
+.header--title-container p {
+    margin-top: 25px;/*separo de la parte superior h1 de p*/
+    font-size: 1.4rem;/*incremento el tamaño de la fuente*/
+    font-weight: 500;/*grosor de la fuente de 100 a 900*/
+    line-height: 1.8rem;/*el tamaño de la caja de p crece en y*/
+    color: var(--Soft-Orange); 
+}
+
+.header--title-container .header--button {
+    position: absolute;/*permite mover a todos los lados*/
+    left: calc(50% - 135px);/*con 135px ubico la caja del botton en x*/
+    top: 270px;/*me permite mover el botton en y*/
+    display: block;
+    margin: 35px;
+    padding: 15px;
+    width: 200px;/*se crea la caja del botton*/
+    height: 48px;
+    background-color: var(--off-white);
+    border: none;
+    border-radius: 10px;
+    /*sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    font-size: 1.2rem;
+    font-weight: bold;/*gruesor de la fuente*/
+    text-decoration: none;
+    color: var(--black);
+}
+
+.header--button span {
+    display: inline-block;
+    width: 14px;/*el tamaño de la caja del icono en x(separo el icono del texto(conoce nuestros planes))*/
+    height: 8px;/*el tamaño de la caja del icono y*/
+   
+    text-align: center;
+    background-image: url("./assets/icons/Vector_flecha_abajo.svg");
+}
+
+main {
+    width: 100%;
+    height: auto;
+    background-color:var(--off-white);
+}
+
+.main-exchange-container{
+    width: 100%;
+    height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+    text-align: center;
+    
+}
+
+.main-exchange-container--title {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0  auto;
+   
+}
+
+.main-exchange-container .backgroundImg {
+   /* width: 200px;*/
+   /* display: flex; */
+   width: 100%;
+   height: 400px;/*creo el cajon para la imagen*/
+   min-width: 320px;
+   max-width: 350px;
+   height: 40vh;
+   
+    margin: auto;/*el cajon se posiciona en el centro de la pantalla*/
+    margin-bottom: 15px;/*alejo la imagen del texto de la parte inferior*/
+    background-image: url("./assets/imgs/foto-domiciliario.jpg");/*ingreso la imagen dentro de la caja*/
+    background-size: cover;
+    background-position: center;/*me aseguro que la imagen siempre va estar en el centro*/
+    background-repeat: no-repeat;/*si la imagen es mas chica que la caja no se va a repetir*/
+}
+
+
+.main-exchange-container h2 {
+    margin-bottom: 30px;/*separo h2 de la parte inferior con con la estructura p*/
+    font-size: 2.4rem;/*tamaño de la fuente de h2*/
+    font-weight: bold;/*gruesor de la fuente*/
+    line-height: 2.6rem;/*el tamaño de la caja de h2 crece en y*/
+    color: var(--black);/*cambio de color*/
+}
+
+.main-exchange-container p {
+    margin-bottom: 30px;
+    font-size: 1.4rem;/*tamaño de la fuente del parrafo p*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.6rem;/*crece en y el tamaño de la caja de p*/
+    color:  #757575;/*color del texto p*/
+
+}
+
+
+/*tarjetas monedas y comisiones*/
+.main-table-container {
+  
+    display: flex;/*se ubican de forma lateral*/
+    min-width: 320px;
+    max-width: 900px;
+    margin: 20px;
+    height: 426px;
+    text-align: center;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+   
+}
+
+
+
+.main-currency-table {
+    position: relative;
+    width: 70%;/*se crea la caja de la informacion de monedas para la tabla*/
+    scroll-snap-align: center;
+    min-width: 235px;/*la caja de la informacion de monedas no se hace mas pequeña que ese pixelaje*/
+    max-width: 500px;/*la caja de la informacion de monedas no se agranda mas de ese pixelaje*/
+    
+    height: 360px;/*la caja de la informacion tiene altura en y*/
+    margin: 0 15px;/*centro la caja*/
+    font-family: "Inter", sans-serif;/*estilo de fuente de la caja de informacion de monedas*/
+}
+
+.main-currency-table .flecha-derecha {
+    position: absolute;/*con ayuda de relative podemos modificar el sitio del signo $*/
+    width: 40px;
+    height: 60px;
+    top: 157px;/*posicion en y del signo*/
+    left: calc(50% - -114px);/*se calcula la posicion en x*/
+    background-image: url(./assets/icons/Vector7.svg); 
+    background-repeat: no-repeat;
+   
+ }
+
+/*modificamos el titulo monedas*/
+.main-currency-table .currency-table--title {
+    margin-bottom: 15px;/*el tamaño de la caja en y del titulo*/
+    font-size: 1.8rem;/*tamaño de la fuente*/
+    font-weight: bold;/*ancho de fuente*/
+    line-height: 2.3rem;/*tamaño del contenedor que esta dentro de la caja*/
+    color: var(--bitcoin-orange);/*color al titulo*/
+}
+/*agrego la caja de valores y fuente de la tabla monedas*/
+.currency-table--container {
+    width: 90%;/*tamaño de la caja de la informacion*/
+    min-width: 230px;/*la caja de la informacion no se hace mas chica que ese pixalaje*/
+    max-width: 300px;/*la caja no va superar el tamaño de ese pixalaje*/
+    height: 250px;/*altura en y*/
+    margin: 0 auto;/*centro la caja en la pantalla*/
+}
+/*porcentaje de ocupacion de la informacion en la caja*/
+.currency-table--container table {
+    width: 100%;/*tamaño de la caja de la tabla*/
+    height: 100%;/*altura en y*/
+}
+
+/*fondo y ocupacion de la fuete en la caja 1*/
+.currency-table--container td {
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.9rem;/*alto en la fuente*/
+    color: var(--grey);
+    background-color: var(--just-white);/*fondo */
+}
+/*se coloca borde-radius a la caja de bitcoin */
+.currency-table--container .table__top-left {
+    border-radius: 15px 0 0 0;
+}
+/*se coloca borde-radius a la caja de $1.96 */
+.currency-table--container .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+/*se coloca borde-radius a la caja de Stellar*/
+.currency-table--container .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+/*se coloca borde-radius a la caja de $4.96*/
+.currency-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+/*modifico tamaño color gruesor de los valores de la tabla monedas*/
+.currency-table--container .table__right {
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;/*salto de linea*/
+    color: #757575;
+}
+
+
+ 
+    /*se modifica la seccion de actualizacion*/
+.currency-table--date{
+    display: flex;
+    width: 255px;
+    height: 50px;
+   
+    line-height: 1rem;
+    margin-top: 30px;/*separa la seccion de actualizacion con la tabla*/
+    padding: 8px;/*se crea el espacio interno*/
+    background-color: var(--Soft-Orange);
+    border-radius: 8px;
+    text-align: center;
+}
+
+
+/*se modifica el texto que esta dentro la caja de actualizacion*/
+.currency-table--date b {
+    font-size: 1.3rem;
+   
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: var(--Warm-Black);
+ 
+}
+   
+
+/*segunda tabla*/
+.main-currency-table .second-table {
+    
+    color: var(--secondary-blue);
+}
+
+
+
+.main-currency-table .flecha-izquierda {
+    position: absolute;/*con ayuda de relative podemos modificar el sitio del signo $*/
+    width: 40px;
+    height: 60px;
+    top: 157px;/*posicion en y del signo*/
+    left: calc(50% - 120px);/*se calcula la posicion en x*/
+    background-image: url(./assets/icons/flecha-izquierda.svg); 
+    background-repeat: no-repeat;
+   
+ }
+.main-table-container .currency-table--title2 {
+    margin-bottom: 15px;/*el tamaño de la caja en y del titulo*/
+    font-size: 1.8rem;/*tamaño de la fuente*/
+    margin-top: 0px;/*separo comisiones de actualizacion de la primera tabla*/
+    font-weight: bold;/*ancho de fuente*/
+    line-height: 2.3rem;/*tamaño del contenedor que esta dentro de la caja*/
+    color: var(--bitcoin-orange);/*color al titulo*/
+}
+
+/*agrego la caja de valores y fuente de la tabla monedas*/
+.second-table .currency-table--container {
+    width: 90%;/*tamaño de la caja de la informacion*/
+    min-width: 230px;/*la caja de la informacion no se hace mas chica que ese pixalaje*/
+    max-width: 300px;/*la caja no va superar el tamaño de ese pixalaje*/
+    height: 250px;/*altura en y*/
+    margin: 0 auto;/*centro la caja en la pantalla*/
+  
+}
+
+/*porcentaje de ocupacion de la informacion en la caja 2*/
+.second-table .currency-table--container table {
+    width: 100%;/*tamaño de la caja de la tabla*/
+    height: 100%;/*altura en y*/
+}
+ 
+/*se coloca ocupacion y gruesor de la fuente de la caja 2*/
+.second-table .currency-table--container td {
+    width: 50%;
+    font-size: 1.6rem;
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.9rem;/*alto en la fuente*/
+    color: var(--grey);
+    background-color: var(--just-white);/*fondo */
+}
+
+/*se coloca borde-radius a la caja de Bitrade, caja 2 */
+.second-table .table__top-left {
+    border-radius: 15px 0 0 0;
+}
+
+/*se coloca borde-radius a la caja de $12.96 caja 2 */
+.second-table .table__top-right {
+    border-radius: 0 15px 0 0;
+}
+
+/*se coloca borde-radius a la caja coinext caja 2*/
+.second-table .table__bottom-left {
+    border-radius: 0 0 0 15px;
+}
+
+/*se coloca borde-radius a la caja de 14.96 caja 2*/
+.currency-table--container .table__bottom-right {
+    border-radius: 0 0 15px 0;
+}
+/*modifico tamaño color gruesor de los valores de la tabla de comisiones*/
+.second-table .currency-table--container .table__right {
+    font-size: 1.4rem;
+    font-weight: normal;
+    line-height: 1.7rem;/*salto de linea*/
+    color: #757575;
+}
+
+.second-table .currency-table--date b{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    color: var(--Warm-Black);
+}
+
+/*targeta first seccion que tiene fondo negro*/
+.main-producto-detail {
+    position: relative;/*nos permite modificar la posicion*/
+    width: 100%;
+    min-width: 320px;
+    height: auto;
+    padding: 20px 10px;
+    background-color: var(--Warm-Black);
+}
+/*icono del piloto  en el centro*/
+.product-detail--avion-piloto-logo {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -23px;/*se mueve en ´y' el icono entre la caja de comisiones y la parte beneficios*/
+    left: calc(50% - 20px);/*se mueve en x el icono*/
+    background-image: url("./assets/imgs/avion-piloto.jpg"); 
+    background-size: cover;
+    background-position: center;/*centro el icono en la caja*/
+    background-repeat: no-repeat;/*el icono no se repite*/
+}
+
+
+.product-detail--title {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;/*separamos de la parte superior*/
+    text-align: center;
+}
+   
+.product-detail--title h2 {
+    margin-bottom: 20px;/*separamos h2 de parrafo*/
+    font-size: 2.4rem;/*le damos tamaño a la fuente */
+    font-weight: bold;/*gruesor de la fuente*/
+    line-height: 2.6rem; /*salto de linea*/
+    color: var(--just-white); 
+}
+
+.product-detail--title p {
+    margin-bottom: 20px;/*separo el contenido de la parte inferior*/
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.8rem;/*salto de linea*/
+    color: #808080;
+}
+
+/*estilos 1 tarjeta(tiempo real)*/
+.product-detail--card {
+    width: 90%;
+    min-width: 258px;/*la targeta no se hace mas pequeña que este ´pixelaje*/
+    max-width: 400px;/*la tarjeta no crece mas de este pixalaje*/
+    height: 150px;/*altura*/
+    margin: 15px auto;/*en la parte superior y inferior*/
+    padding: 15px;/*espacio interno de la tarjeta*/
+    background-color: var(--Black);/*color a la tarjeta*/
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0.16);/*sombra para la tarjeta*/
+}    
+    /*icono reloj*/
+.product-detail--card .clock {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+    left: calc(50% - 20px);
+    background-image: url(./assets/icons/clock.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}  
+
+.product--card-title1 {
+    position: relative;
+    left: calc(50% - 63px);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+   
+    line-height: 1.8rem;
+    color: var(--just-white);
+}  
+
+.product--card-body {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+/*caja two tarjeta*/
+
+    /*logo de la vista*/
+.main-producto-detail .vista {
+    display: inline-block;
+    position: relative;
+    left: calc(50% - 20px);
+    width: 20px;
+    height: 20px;
+    margin-bottom: 15px;
+    background-image: url(./assets/icons/eye.svg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*estilos titulo*/
+.product--card-title2 {
+    position: relative;
+    left: calc(50% - 120px);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+
+.product--card-bodytwo {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #808080;
+}
+   
+/*three tarjeta*/
+/*iocono dolar*/
+.product-detail--card .dolar {
+    display: inline-block;/*para poder ubicarlo*/
+    position: relative;
+    left: calc(50% - 20px);
+    width: 20px;/*tamaño en x de la caja del icono*/
+    height: 20px;/*tamaño en y de la caja del icono*/
+    margin-bottom: 10px;/*distacia de la parte inferior del icono*/
+    background-image: url(./assets/icons/dollar-sign.svg);/*ingreso el icono*/
+    background-size: cover;
+    background-position: center;/*centro el icono en la caja*/
+    background-repeat: no-repeat;
+}
+    /*estilos fuente titulo*/
+.product--card-title3 {
+    position: relative;
+    left:calc(50% - 80px);
+    margin-bottom: 15px;/*separo el titulo de la parte inferior*/
+    font-size: 1.8rem;/*tamaño de la fuente*/
+    font-weight: bold;/*gruesor de la fuente*/
+    line-height: 1.8rem;/*salto de linea*/
+    color: var(--just-white);/*color de la fuente*/
+}
+/*estilo fuente p*/
+.product--card-bodythree {
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.8rem;/*salto de linea*/
+    color: #808080;/*color de la fuente*/
+
+}
+    
+/*four tarjeta*/
+/*logo informacion*/
+.product-detail--card .informacion {
+    position: relative;
+    left:calc(50% - 20px);
+    display: inline-block;/*me permite reposicionar el logo*/
+    width: 23px;/*tamaño en x de la caja*/
+    height: 23px;/*tamaño y de la caja*/
+    margin-bottom: 15px/*distancia de la parte inferior*/;
+    background-image: url(./assets/icons/check-circle.svg);
+    background-size: cover;
+    background-position: center;/*centro el icono en la caja*/
+    background-repeat: no-repeat;/*no se repite el icono*/
+}
+
+/*title four*/
+.product--card-titlefour {
+    position: relative;
+    left:calc(50% - 100px);
+    margin-bottom: 15px;/*distancia de la parte superior*/
+    font-size: 1.8rem;/*tamaño de la fuente*/
+    font-weight: bold;/*gruesor de la fuente*/
+    color: var(--just-white);/*color de la fuente*/
+    line-height: 1.8rem;
+    }
+    /*parrafo*/
+.product--card-bodyfour {
+    margin-bottom: 15px;/*distancia de la parte inferior*/
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.8rem;
+    color: #808080;/*color de la fuente*/
+}
+   
+/*seccion de la imagen de la chica*/
+.bitcoin-img-container {
+    width: 100%;
+    min-width: 320px;
+    max-width: 400px; 
+    margin: 0 auto;
+    height: 60vh;
+    background-image: url("./assets/imgs/celular.jpg");
+    background-position: center; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center; 
+}
+    /*h2 de la imagen de la chica*/
+.bitcoin-img-container h2 {
+   display: inline;
+    width: 100%;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: red;
+    text-align: center;
+}
+    
+   /*contenedor principal ultima seccion*/
+
+.main-plans-container {
+    width: 100%;/*el contenido total ocupa el 100% del width*/
+    min-width: 320px;/*no se hace mas pequeño que este pixelaje*/
+    margin-top: 0px;
+    padding-bottom: 10px;/*distancia de la parte inferior del width y el botton escoger este*/
+    text-align: center;
+    background: var(--off-white);
+}
+
+/*contenedor del titulo*/
+.plans--title {
+    width: 30%;/*el titulo y parrafo se ajusta al width*/
+    min-width: 288px;/*el width no se hace mas pequeño que este pixelaje*/
+    height: auto;/*el texto limita el crecimiento del contenedor*/
+    margin: 0 auto;/*como no se utiliza el 100% del width esto ayuda a centrar el contenedor*/
+    margin-bottom: 50px;/*la distancia de la parte inferior*/
+}
+
+/*estilos Escoge el plan que mejor se ajuste a ti*/
+.plans--title h2 {
+    width: 300px;
+    margin-top: 60px;/*distancia de la parte superior*/
+    font-size: 1.8rem;
+    font-weight: bold;/*gruesor de la fuente*/
+    line-height: 2.6rem;/*salto de linea*/
+    color: var(--black);
+}
+
+.plans--title p {
+    width: 100%;
+    padding-top: 30px;/*distancia de la parte superior*/
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: bold;/*gruesor de la fuente*/
+    line-height: 2.6rem;/*salto de linea*/
+    color: #757575;
+    
+}
+
+/*all the card of the ultima section*/
+.plans-container--slider {
+    display: flex;/*las tarjetas se colocan de forma horizontal*/
+    height: 316px;/*altura*/
+    overflow-x: scroll;/*esto permite hace scroll sin salirse del contenedor padre*/
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+
+}
+
+ /*ubicacion de la tarjeta de recomendado*/
+.plans-container--card {
+    position: relative;/*se modifica la posicion*/
+    scroll-snap-align: center; /*ayuda a centrar la tarjeta en scroll*/
+    width: 70%;/*ocupacion del contenido de la tarjeta*/
+    min-width: 190px;/*no se hace mas chico este pixelaje es con relacion a la tarjeta no al contenedor padre*/
+    max-width: 300px;/*no se hace mas grande este pixelaje esto es con relacion a la tarjeta no con el contenedor padre*/
+    height: 250px;/*altura*/
+    margin: 50px 5px 0;
+    padding: 0 15px;/*en la parte superior no tiene espacio en los laterales tiene espacio*/
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(89, 73, 30, 0.16);/*sombra a la etiqueta*/
+}
+
+.recomendado {
+    position: absolute;
+    width: 120px;/*ancho de la caja*/
+    height: 31px;/*alto de la caja*/
+    padding: 6px;/*centro recomendado dentro de su caja*/
+    top: -15px;/*se ubica en "y" en la mitad de su contenedor padre*/
+    left: calc(50% - 60px);/*se centra la caja */
+    font-size: 1.2rem;/*tamaño de la fuente*/
+    background-color: var(--bitcoin-orange);/*color de la caja*/
+    border-radius: 8px;
+    color: var(--just-white);/*color de la fuente*/
+}
+
+
+
+
+ /*titulo tarjeta*/
+.plan-card--title{
+    padding-top: 30px;/*espacio de la parte superior*/
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.8rem;/*salto de linea*/
+    color: black;
+}
+
+.plan-card--price {
+    position: relative;/*me permite modificar el lugar del signo $*/
+    padding: 5px 0;/*arriba espacio 5px a los lados 0*/
+    font-size: 5.2rem;/*tamaño de la fuente*/
+    font-weight: bold;/*gruesor de la fuente*/ 
+    margin-right: -30px;
+    line-height: 5.3rem;/*salto de linea*/
+    color: black;
+}
+
+/*icono dinero primera tarjeta*/
+.plan-card--saving span{
+    font-size: 2.2rem;
+    margin-right: -10px;
+}
+/*modifiamos el signo $*/
+.plan-card--price span {
+    position: absolute;/*con ayuda de relative podemos modificar el sitio del signo $*/
+    top: 25px;/*posicion en y del signo*/
+    left: calc(50% - 70px);/*se calcula la posicion en x*/
+    font-size: 3.2rem;/*tamaño del signo*/
+    font-weight: 300;/*gruesor de la fuente*/
+    line-height: 1.4rem;/*salto de linea*/
+}
+
+
+/*emojin vino*/
+.plan-card--saving {
+    font-size: 1.2rem;
+    color:#757575;
+}
+
+/*emojin segunda tarjeta dinero*/
+.plan-two-card--saving span {
+   font-size: 2.2rem;
+   margin-right: -10px;
+}
+
+
+/*estilos del primer botton "escoger este"*/
+.plan-card--ca {
+    width: 150px;/*ancho de la caja*/
+    height: 48px;/*altura de la caja*/
+    margin: 20px;/*distancia en los 4 puntos cardinales*/
+    margin-left: 5px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: ‘DM Sans’, sans-serif;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+   
+}
+
+/*icono flecha izquierda*/
+.plan-card--ca span {
+    display: inline-block;
+    width: 20px;/*ancho de la caja */
+    height: 20px;/*alto de la caja*/
+    background-image: url(./assets/icons/arrow-right-orange.svg);
+    vertical-align: text-bottom;/*de esta forma se alinea el texto con la flecha*/
+}
+
+
+/*two card de la ultima section*/
+/*titulo two card*/
+ /*titulo pago anual*/
+ .plan-two-card--title{
+    padding-top: 30px;/*espacio de la parte superior*/
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.8rem;/*salto de linea*/
+    color: black;
+}
+/*modifico el 99 de la segunda tarjeta*/
+.plan-two-card--price {
+    position: relative;/*me permite modificar el lugar del signo $*/
+    padding: 5px 0;/*arriba espacio 5px a los lados 0*/
+    font-size: 5.2rem;/*tamaño de la fuente*/
+    font-weight: bold;/*gruesor de la fuente*/ 
+    margin-right: -60px;
+    line-height: 5.3rem;/*salto de linea*/
+    color: black;
+}
+
+/*modifiamos el signo $*/
+.plan-two-card--price span {
+    position: absolute;/*con ayuda de relative podemos modificar el sitio del signo $*/
+    top: 20px;/*posicion en y del signo*/
+    left: calc(50% - 100px);/*se calcula la posicion en x*/
+    font-size: 5.2rem;/*tamaño del signo*/
+    font-weight: 300;/*gruesor de la fuente*/
+    line-height: 1.4rem;/*salto de linea*/
+}
+
+/*seccion registrate segunda tarjeta.*/
+.plan-two-card--saving {
+    font-size: 1.2rem;
+    color:#757575;
+}
+
+/*estilos del botton "escoger este" two car*/
+.plan-two-card--ca {
+    width: 150px;/*ancho de la caja*/
+    height: 48px;/*altura de la caja*/
+    margin: 20px;/*distancia en los 4 puntos cardinales*/
+    margin-left: 5px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: ‘DM Sans’, sans-serif;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+
+/*icono flecha izquierda two card*/
+.plan-two-card--ca span {
+    display: inline-block;
+    width: 20px;/*ancho de la caja */
+    height: 20px;/*alto de la caja*/
+    background-image: url(./assets/icons/arrow-right-orange.svg);
+    vertical-align: text-bottom;/*de esta forma se alinea el texto con la flecha*/
+}
+
+
+/*three card ultima section*/
+
+
+ /*titulo pago anual three card*/
+.plan-three-card--title{
+    padding-top: 30px;/*espacio de la parte superior*/
+    font-size: 1.4rem;/*tamaño de la fuente*/
+    font-weight: 500;/*gruesor de la fuente*/
+    line-height: 1.8rem;/*salto de linea*/
+    color: black;
+}
+
+/*emojin medicina three card ultima section*/
+.plan-three-card--price {
+    position: relative;/*me permite modificar el lugar del signo $*/
+    padding: 5px 0;/*arriba espacio 5px a los lados 0*/
+    font-size: 5.2rem;/*tamaño de la fuente*/
+    font-weight: bold;/*gruesor de la fuente*/ 
+    line-height: 5.3rem;/*salto de linea*/
+    color: black;
+}
+
+
+/*registrate tercera tarjeta.*/
+.plan-three-card--saving {
+    font-size: 1.2rem;
+    color:#757575;
+}
+
+/*emojin dinero tercera tarjeta*/
+.plan-three-card--saving span{
+    font-size: 2.2rem;
+    margin-right: -10px;
+}
+
+/*estilos del botton "escoger este" three car*/
+.plan-three-card--ca {
+    width: 150px;/*ancho de la caja*/
+    height: 48px;/*altura de la caja*/
+    margin: 20px;/*distancia en los 4 puntos cardinales*/
+    margin-left: 5px;
+    background-color: #FAF8F7;
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-family: ‘DM Sans’, sans-serif;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+
+/*icono flecha izquierda two card*/
+.plan-three-card--ca span {
+    display: inline-block;
+    width: 20px;/*ancho de la caja */
+    height: 20px;/*alto de la caja*/
+    background-image: url(./assets/icons/arrow-right-orange.svg);
+    vertical-align: text-bottom;/*de esta forma se alinea el texto con la flecha*/
+}
+
+/*footer*/
+footer {
+    display: flex;/*ubica el logo frente a las redes sociales*/
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+footer section {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.left {
+    margin-top: -80.5px;
+}
+/*redes sociales*/
+footer .left ul {
+    position: relative;
+    display: flex;
+   
+    margin-top: 60px;
+    justify-content: center;
+   
+    
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    height: 1.8rem;
+    list-style: none;
+}
+
+/*estilos redes sociales*/
+.left li {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-left: 8px;
+   margin: 10px 0;/*espacio en la parte superior e inferior*/
+   
+}
+
+.left li img{
+    width: 50px;
+    height: 50px;
+}
+.left a {
+    
+    text-decoration: none;/*se quita la linea de abajo que tiene las redes sociales*/
+    color: var(--just-white);
+}
+
+figure img {
+    width: 100px;
+    height: 100px;
+    margin-left: 0px;
+    
+
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+footer .right figure figcaption {
+    font-size: 1rem;
+    margin-top: 17px;
+    font-weight: bold;
+}

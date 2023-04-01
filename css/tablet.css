@@ -1,0 +1,64 @@
+
+.backgroundImg{
+    display: flex;/*las tarjetas se acomodan a medida que crece la resolucion*/
+    flex-wrap: wrap;/*no deja que se haga un overflow*/
+    width: 930px;
+    height: 1200vh;
+    margin: 0 auto;
+}
+
+
+.main-tables-container {
+    display: flex;
+    width: 930px;
+    margin: 0 auto;
+}
+
+
+
+.product-cards--container {
+    display: flex;/*las tarjetas se acomodan a medida que crece la resolucion*/
+    flex-wrap: wrap;/*no deja que se haga un overflow*/
+    width: 930px;
+    margin: 0 auto;
+}
+
+/*imagen domiciliario*/
+.main-exchange-container .backgroundImg {
+    display: flex;
+    max-width: 700px;
+    height: 90vh;
+    width: 930px;
+    margin: 0 auto;
+    margin-bottom: 15px;/*alejo la imagen del texto de la parte inferior*/
+
+} 
+
+/*imagen celular*/
+.bitcoin-img-container {
+    display: flex;
+    height: 100vh;
+    width: 930px;
+    margin: 0 auto;
+    margin-bottom: 15px;/*alejo la imagen del texto de la parte inferior*/
+}
+/*seccion de las dos tarjetas de bancos y oficinas*/
+.main-table-container {
+  
+    display: flex;/*se ubican de forma lateral*/
+    max-width: 930px;
+    margin: 0 auto;
+    height: 426px;
+   
+}
+/*seccion nota y correo*/
+.currency-table--date{
+    display: flex;
+    max-width: 930px;
+    margin: 0 auto;
+}
+
+/*ultima section*/
+.plans-container--slider {
+    justify-content: center;/*centra las tarjetas de la ultima section a medida que crece*/
+}
